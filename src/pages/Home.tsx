@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
 const Home = ({ dispatch }) => {
-  const [value, setValue] = useState<string>('1')
+  const [value, setValue] = useState<string>("1")
   const [counter, setCounter] = useState<number>(0)
   return (
     <>

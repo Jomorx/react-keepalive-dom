@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useRef } from 'react'
-import CacheContext from './cacheContext'
+import React, { useContext, useEffect, useRef } from "react"
+import CacheContext from "./cacheContext"
 
 const withKeepAlive: (
   arg1: any,
@@ -15,7 +15,7 @@ const withKeepAlive: (
     useEffect(() => {
       if (scroll) {
         divRef.current?.addEventListener(
-          'scroll',
+          "scroll",
           handleScroll.bind(null, cacheId),
           true //监听捕获阶段
         )

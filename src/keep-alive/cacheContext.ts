@@ -1,6 +1,6 @@
-import React, { createContext, ReactElement } from 'react'
-import { ICacheState } from './cacheReducer'
-import CacheTypes from './cache-types'
+import React, { createContext, ReactElement } from "react"
+import { ICacheState } from "./cacheReducer"
+import CacheTypes from "./cache-types"
 type ICacheDispatch = {
   type: keyof CacheTypes
   payload: unknown

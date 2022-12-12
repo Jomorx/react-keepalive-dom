@@ -1,12 +1,12 @@
-import { ReactNode } from 'react'
-import CacheTypes from './cache-types'
+import { ReactNode } from "react"
+import CacheTypes from "./cache-types"
 export type ICacheState = {
   [k in string]: {
     cacheId: string
     reactElement: ReactNode
     status: string
     doms: HTMLElement[]
-    scrolls: { [k in symbol]: number  }
+    scrolls: { [k in symbol]: number }
   }
 }
 const cacheReducer = (cacheStates: ICacheState, { type, payload }) => {
