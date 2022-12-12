@@ -5,11 +5,14 @@ const Profile = () => {
   console.log("render")
 
   return (
-    <ul style={{ height: "200px", overflowY: "scroll" }}>
-      {list.map((item, index) => {
-        return <li key={index}>{index}</li>
-      })}
-    </ul>
+    <>
+      <h1>Profile</h1>
+      <ul style={{ height: "200px", overflowY: "scroll" }}>
+        {list.map((item, index) => {
+          return <li key={index}>{index}</li>
+        })}
+      </ul>
+    </>
   )
 }
 

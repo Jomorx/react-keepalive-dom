@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useRef } from "react"
 import CacheContext from "./cacheContext"
-
-const withKeepAlive: (
-  arg1: any,
+import { CacheStatus, ICacheContext } from "./cache-types"
+type IWithKeepAlive = (
+  arg1: React.FC<Pick<ICacheContext, "dispatch">>,
   arg2?: { cacheId: string; scroll: boolean }
-) => any = (
+) => React.FC
+
+const withKeepAlive: IWithKeepAlive = (
   OldComponent,
   { cacheId, scroll } = { cacheId: window.location.pathname, scroll: false }
 ) => {
@@ -24,25 +26,21 @@ const withKeepAlive: (
 
     //可能是第一次，也可能是切回来
     useEffect(() => {
-      console.log(cacheStates)
-
       const cacheState = cacheStates[cacheId]
-      //孩子已经有了
-      if (cacheState?.doms) {
+      //childNode
+      if (cacheState?.doms && cacheState.status !== CacheStatus.DESTROY) {
         const { doms } = cacheState
+        // 放childNode
         doms.forEach((dom) => {
           divRef.current?.appendChild(dom)
-        }) // 放孩子
-
-        if (scroll) {
-          doms.forEach((dom) => {
+          if (scroll) {
             if (cacheState.scrolls[dom as unknown as symbol]) {
               dom.scrollTop = cacheState.scrolls[dom as unknown as symbol]
             }
-          })
-        }
+          }
+        })
       } else {
-        //孩子还没有
+        //childNode还没有
         mount({
           cacheId,
           reactElement: <OldComponent {...props} dispatch={dispatch} />

@@ -5,6 +5,7 @@ const Home = ({ dispatch }) => {
   const [counter, setCounter] = useState<number>(0)
   return (
     <>
+    <h1>Home</h1>
       <input
         type="number"
         value={value}
