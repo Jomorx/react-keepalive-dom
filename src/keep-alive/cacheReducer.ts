@@ -1,17 +1,16 @@
-import { ReactNode } from "react";
-import CacheTypes from "./cache-types";
-export type ICacheState =
-  | {
-      cacheId: {
-        cacheId: string;
-        reactElement: ReactNode;
-        status: string;
-        doms: HTMLElement | undefined;
-      };
-    }
-  | {};
+import { ReactNode } from 'react'
+import CacheTypes from './cache-types'
+export type ICacheState = {
+  [k in string]: {
+    cacheId: string
+    reactElement: ReactNode
+    status: string
+    doms: HTMLElement[]
+    scrolls: { [k in symbol]: number  }
+  }
+}
 const cacheReducer = (cacheStates: ICacheState, { type, payload }) => {
-  const { cacheId, reactElement, doms } = payload;
+  const { cacheId, reactElement, doms } = payload
   switch (type) {
     case CacheTypes.CREATE: {
       return {
@@ -21,9 +20,9 @@ const cacheReducer = (cacheStates: ICacheState, { type, payload }) => {
           reactElement, // 要创建的虚拟dom
           status: CacheTypes.CREATE, // 状态是创建
           doms: undefined,
-          scrolls: {}, // 滚动信息
-        },
-      };
+          scrolls: {} // 滚动信息
+        }
+      }
     }
     //代表真实dom已经被创建
     case CacheTypes.CREATED: {
@@ -33,13 +32,13 @@ const cacheReducer = (cacheStates: ICacheState, { type, payload }) => {
           //一个缓存条目
           ...cacheStates[cacheId],
           status: CacheTypes.CREATED, // 状态是创建
-          doms,
-        },
-      };
+          doms
+        }
+      }
     }
     default:
-      return cacheStates;
+      return cacheStates
   }
-};
+}
 
-export default cacheReducer;
+export default cacheReducer
