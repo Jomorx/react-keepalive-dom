@@ -15,13 +15,16 @@ const withKeepAlive: IWithKeepAlive = (
       useContext(CacheContext)
     const divRef = useRef<HTMLDivElement | null>(null)
     useEffect(() => {
+      const onScroll = handleScroll.bind(null, cacheId)
       if (scroll) {
         divRef.current?.addEventListener(
           "scroll",
-          handleScroll.bind(null, cacheId),
+          onScroll,
           true //监听捕获阶段
         )
       }
+      //取消监听
+      return divRef.current?.removeEventListener("scroll", onScroll)
     }, [handleScroll])
 
     //可能是第一次，也可能是切回来

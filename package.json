@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "prettier": "prettier --write .",
     "prepare": "husky install",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "commit": "git-cz"
   },
   "dependencies": {
     "react": "^18.2.0",
