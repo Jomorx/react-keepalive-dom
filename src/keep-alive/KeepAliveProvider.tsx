@@ -8,7 +8,7 @@ const KeepAliveProvider = ({
   children: ReactElement | ReactElement[]
 }) => {
   const [cacheStates, dispatch] = useReducer(cacheReducer, {} as ICacheState)
-  const mount = useCallback(
+  const mount: ICacheContext["mount"] = useCallback(
     ({ cacheId, reactElement }) => {
       //如果没有dom 表示第一次render
       if (!cacheStates[cacheId]) {
@@ -23,6 +23,7 @@ const KeepAliveProvider = ({
         if (cacheState.status === CacheStatus.DESTROY) {
           //获取到旧的真实dom
           const doms = cacheState.doms
+          if(doms)
           doms.forEach((dom) => dom.parentNode?.removeChild(dom))
           //创建新的dom
           dispatch({

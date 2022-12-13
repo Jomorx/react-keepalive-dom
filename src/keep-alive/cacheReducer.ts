@@ -33,7 +33,7 @@ const cacheReducer = (cacheStates: ICacheState, { type, payload }) => {
         [cacheId]: {
           //一个缓存条目
           ...cacheStates[cacheId],
-          status: CacheStatus.DESTROY // 状态是销毁
+          status: CacheStatus.DESTROY,// 状态是销毁
         }
       }
       break
