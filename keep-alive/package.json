@@ -2,9 +2,10 @@
   "name": "react-keepalive-dom",
   "version": "1.0.0",
   "description": "A solution for saving the state of react components",
-  "main": "index.js",
+  "main": "./index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"tsc && cp ./package.json ./dist/package.json"
   },
   "repository": {
     "type": "git",
@@ -14,7 +15,7 @@
     "react",
     "keepalive"
   ],
-  "author": "jiumolixin",
+  "author": "hechihe",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jiumolixin/react-keepalive-dom/issues"

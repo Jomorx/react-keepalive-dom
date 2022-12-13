@@ -6,9 +6,9 @@ export enum CacheStatus {
   DESTROY = "DESTROY"
 }
 //dispatch类型
-type ICacheDispatch = {
+export type ICacheDispatch = {
   type: CacheStatus[keyof CacheStatus]
-  payload: unknown
+  payload: any
 }
 
 export type ICacheContext = {

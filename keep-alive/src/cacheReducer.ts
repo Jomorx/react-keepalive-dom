@@ -1,6 +1,6 @@
-import { CacheStatus, ICacheState } from "./cache-types"
+import { CacheStatus, ICacheDispatch, ICacheState } from "./cache-types"
 
-const cacheReducer = (cacheStates: ICacheState, { type, payload }) => {
+const cacheReducer = (cacheStates: ICacheState, { type, payload }:ICacheDispatch) => {
   const { cacheId, reactElement, doms } = payload
   switch (type) {
     case CacheStatus.CREATE: {
