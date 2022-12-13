@@ -1,12 +1,12 @@
 import React, { useNavigate, Route, Routes } from "react-router-dom"
 import { useContext } from "react"
-import { withKeepAlive } from "./keep-alive"
-import CacheContext from "./keep-alive/cacheContext"
+import { withKeepAlive } from "../keep-alive"
+import CacheContext from "../keep-alive/cacheContext"
 import Home from "./pages/Home"
 import Profile from "./pages/Profile"
 const KHome = withKeepAlive(Home, { cacheId: "/Home", scroll: true })
 const KProfile = withKeepAlive(Profile, { cacheId: "/Profile", scroll: true })
-import { CacheStatus } from "./keep-alive/cache-types"
+import { CacheStatus } from "../keep-alive/cache-types"
 
 const App = () => {
   const navigate = useNavigate()
