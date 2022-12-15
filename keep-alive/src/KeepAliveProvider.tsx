@@ -46,10 +46,12 @@ const KeepAliveProvider = ({
     },
     [cacheStates]
   )
-
+  const destroyCache = useCallback((cacheId:string)=>{
+    dispatch({type:CacheStatus.DESTROY,payload:{cacheId}})
+    },[])
   return (
     <CacheContext.Provider
-      value={{ cacheStates, dispatch, mount, handleScroll }}
+      value={{ cacheStates, dispatch, mount, handleScroll,destroyCache }}
     >
       {children}
       {Object.values(cacheStates)

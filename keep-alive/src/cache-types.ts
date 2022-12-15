@@ -22,6 +22,7 @@ export type ICacheContext = {
     reactElement: ReactElement
   }) => void
   handleScroll: (cacheId: string, event: any) => void
+  destroyCache:(cacheId:string)=>void
 }
 export type ICacheState = {
   [k in string]: {

@@ -1,6 +1,9 @@
 import { CacheStatus, ICacheDispatch, ICacheState } from "./cache-types"
 
-const cacheReducer = (cacheStates: ICacheState, { type, payload }:ICacheDispatch) => {
+const cacheReducer = (
+  cacheStates: ICacheState,
+  { type, payload }: ICacheDispatch
+) => {
   const { cacheId, reactElement, doms } = payload
   switch (type) {
     case CacheStatus.CREATE: {
@@ -33,7 +36,7 @@ const cacheReducer = (cacheStates: ICacheState, { type, payload }:ICacheDispatch
         [cacheId]: {
           //一个缓存条目
           ...cacheStates[cacheId],
-          status: CacheStatus.DESTROY,// 状态是销毁
+          status: CacheStatus.DESTROY // 状态是销毁
         }
       }
       break
@@ -42,5 +45,4 @@ const cacheReducer = (cacheStates: ICacheState, { type, payload }:ICacheDispatch
       return cacheStates
   }
 }
-
 export default cacheReducer
