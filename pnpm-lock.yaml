@@ -23,6 +23,7 @@ specifiers:
   prettier: ^2.8.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-keepalive-dom: 1.0.1
   react-router-dom: ^6.4.5
   stylelint: ^14.16.0
   stylelint-config-standard: ^29.0.0
@@ -32,6 +33,7 @@ specifiers:
 dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-keepalive-dom: 1.0.1
 
 devDependencies:
   '@commitlint/cli': 17.3.0
@@ -3235,6 +3237,10 @@ packages:
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
+
+  /react-keepalive-dom/1.0.1:
+    resolution: {integrity: sha512-+MXtF0h+8E33Pl16prNCXiXYmflPouwIIH/ziFBeFFGTVxzvmzgvxfbVj1xvm3Cw4/0tUEwb79X6/MUU2ybPAg==}
+    dev: false
 
   /react-refresh/0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}

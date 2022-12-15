@@ -1,17 +1,13 @@
 import React, { useNavigate, Route, Routes } from "react-router-dom"
 import { useContext } from "react"
-import { withKeepAlive } from "../keep-alive/dist"
-import CacheContext from "../keep-alive/dist/src/cacheContext"
+import { withKeepAlive,CacheContext } from "react-keepalive-dom"
 import Home from "./pages/Home"
 import Profile from "./pages/Profile"
 const KHome = withKeepAlive(Home, { cacheId: "/Home", scroll: true })
 const KProfile = withKeepAlive(Profile, { cacheId: "/Profile", scroll: true })
-import { CacheStatus } from "../keep-alive/dist/src/cache-types"
-
 const App = () => {
   const navigate = useNavigate()
-  const { dispatch } = useContext(CacheContext)
-  console.log(dispatch);
+  const { destroyCache } = useContext(CacheContext)
 
   return (
     <>
@@ -21,10 +17,7 @@ const App = () => {
       <hr />
       <button
         onClick={() => {
-          dispatch({
-            type: CacheStatus.DESTROY,
-            payload: { cacheId: "/Profile" }
-          })
+          destroyCache("/Profile")
         }}
       >
         destroy Profile
@@ -32,7 +25,7 @@ const App = () => {
 
       <button
         onClick={() => {
-          dispatch({ type: CacheStatus.DESTROY, payload: { cacheId: "/Home" } })
+          destroyCache("/Home")
         }}
       >
         destroy Home

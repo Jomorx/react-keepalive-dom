@@ -37,8 +37,8 @@ const withKeepAlive: IWithKeepAlive = (
         doms.forEach((dom) => {
           divRef.current?.appendChild(dom)
           if (scroll) {
-            if (cacheState.scrolls[dom as unknown as symbol]) {
-              dom.scrollTop = cacheState.scrolls[dom as unknown as symbol]
+            if (cacheState.scrolls[dom]) {
+              dom.scrollTop = cacheState.scrolls[dom]
             }
           }
         })

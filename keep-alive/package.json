@@ -1,6 +1,6 @@
 {
   "name": "react-keepalive-dom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A solution for saving the state of react components",
   "main": "./index.js",
   "scripts": {

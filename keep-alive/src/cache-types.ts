@@ -29,7 +29,7 @@ export type ICacheState = {
     cacheId: string
     reactElement: ReactElement
     status: string
-    doms: HTMLElement[]
-    scrolls: { [k in symbol]: number }
+    doms: any[]
+    scrolls: { [k in any]: number }
   }
 }
