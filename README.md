@@ -1,6 +1,9 @@
 ## react-keepalive-dom
-使用react-keepalive-dom 配合react-router-dom缓存组件的状态
+
+使用 react-keepalive-dom 配合 react-router-dom 缓存组件的状态
+
 ### How To Use
+
 ```bash
 pnpm i react-keepalive-dom@next
 ```
@@ -13,11 +16,11 @@ import App from "./App"
 import { BrowserRouter } from "react-router-dom"
 import { KeepAliveProvider } from "react-keepalive-dom"
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <KeepAliveProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <KeepAliveProvider>
       <App />
-    </BrowserRouter>
-  </KeepAliveProvider>
+    </KeepAliveProvider>
+  </BrowserRouter>
 )
 ```
 
@@ -25,7 +28,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 // in App.tsx
 import React, { useNavigate, Route, Routes } from "react-router-dom"
 import { useContext } from "react"
-import { withKeepAlive,CacheContext } from "react-keepalive-dom"
+import { withKeepAlive, CacheContext } from "react-keepalive-dom"
 import Home from "./pages/Home"
 import Profile from "./pages/Profile"
 const KHome = withKeepAlive(Home, { cacheId: "/Home", scroll: true })
@@ -66,8 +69,8 @@ const App = () => {
 }
 
 export default App
-
 ```
+
 ```tsx
 //in src/pages/Profiletsx
 import React from "react"
@@ -89,8 +92,8 @@ const Profile = () => {
 }
 
 export default Profile
-
 ```
+
 ```tsx
 // in src/pages/Home.tsx
 import React, { useState } from "react"
@@ -100,20 +103,17 @@ const Home = () => {
   const [counter, setCounter] = useState<number>(0)
   return (
     <>
-    <h1>Home</h1>
+      <h1>Home</h1>
       <input
         type="number"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button onClick={() => setCounter(counter + parseInt(value))}>
-        ADD
-      </button>
+      <button onClick={() => setCounter(counter + parseInt(value))}>ADD</button>
       <h1>{counter}</h1>
     </>
   )
 }
 
 export default Home
-
 ```
