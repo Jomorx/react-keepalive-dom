@@ -4,9 +4,9 @@ import App from "./App"
 import { BrowserRouter } from "react-router-dom"
 import { KeepAliveProvider } from "react-keepalive-dom"
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <KeepAliveProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <KeepAliveProvider>
       <App />
-    </BrowserRouter>
-  </KeepAliveProvider>
+    </KeepAliveProvider>
+  </BrowserRouter>
 )

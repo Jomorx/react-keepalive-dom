@@ -1,10 +1,13 @@
 import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const Home = () => {
   const [value, setValue] = useState<string>("1")
   const [counter, setCounter] = useState<number>(0)
+  const navigate = useNavigate()
   return (
     <>
+    <button onClick={()=>{navigate("/profile")}}></button>
     <h1>Home</h1>
       <input
         type="number"
