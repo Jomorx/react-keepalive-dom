@@ -1,21 +1,19 @@
 {
-  "name": "vite-project",
+  "name": "react-keepalive-dom",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "pnpm --filter @react-keepalive-dom/play dev",
     "build": "tsc && vite build",
-    "preview": "vite preview",
     "prettier": "prettier --write .",
     "prepare": "husky install",
     "lint": "eslint .",
-    "commit": "git-cz"
+    "commit": "git add . && git-cz"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-keepalive-dom": "1.0.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
