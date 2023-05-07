@@ -38,7 +38,8 @@ module.exports = defineConfig({
     "react/prop-types": 0,
     "react/display-name": "off",
     // eslint-plugin-react-hooks 的配置
-    "react-hooks/rules-of-hooks": "error"
+    "react-hooks/rules-of-hooks": "error",
+    "react/react-in-jsx-scope":OFF
     // 'react-hooks/exhaustive -deps': 'warn'
   }
 })
