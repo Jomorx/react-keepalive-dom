@@ -1,6 +1,15 @@
 import { RouteObject } from "react-router-dom"
 import Input from "../pages/Input"
 import React from "react"
-
-const routes: RouteObject[] = [{ path: "/", element: <Input /> }]
+import { KeepAlive } from "react-keepalive-dom"
+const routes: RouteObject[] = [
+  {
+    path: "/",
+    element: (
+      <KeepAlive>
+        <Input />
+      </KeepAlive>
+    )
+  }
+]
 export default routes
